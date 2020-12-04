@@ -14334,6 +14334,9 @@ a.anchor-link {
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
 
+    <span class="c1"># Visualize DF</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
     <span class="c1">#Import pickle</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
 </pre></div>
@@ -14491,7 +14494,7 @@ a.anchor-link {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Accuracy of Random Forest classifier on test set: 0.80397
-Wall time: 4min 43s
+Wall time: 4min 45s
 </pre>
 </div>
 </div>
@@ -14503,12 +14506,432 @@ Wall time: 4min 43s
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Confussion-Matrix">Confussion Matrix<a class="anchor-link" href="#Confussion-Matrix">&#182;</a></h3>
+<h3 id="Importance-columns">Importance columns<a class="anchor-link" href="#Importance-columns">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">importance</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rfreg</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> 
+                          <span class="n">X_val</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> 
+                          <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Importance&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Importance&#39;</span><span class="p">],</span> 
+                                                                <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">importance</span><span class="o">.</span><span class="n">to_html</span><span class="p">()))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>int_rate</th>
+      <td>0.068885</td>
+    </tr>
+    <tr>
+      <th>avg_cur_bal</th>
+      <td>0.045618</td>
+    </tr>
+    <tr>
+      <th>bc_open_to_buy</th>
+      <td>0.045316</td>
+    </tr>
+    <tr>
+      <th>annual_inc</th>
+      <td>0.042983</td>
+    </tr>
+    <tr>
+      <th>mo_sin_old_rev_tl_op</th>
+      <td>0.042907</td>
+    </tr>
+    <tr>
+      <th>revol_bal</th>
+      <td>0.042365</td>
+    </tr>
+    <tr>
+      <th>bc_util</th>
+      <td>0.042198</td>
+    </tr>
+    <tr>
+      <th>revol_util</th>
+      <td>0.042151</td>
+    </tr>
+    <tr>
+      <th>mo_sin_old_il_acct</th>
+      <td>0.040581</td>
+    </tr>
+    <tr>
+      <th>debt_settlement_flag_1</th>
+      <td>0.039983</td>
+    </tr>
+    <tr>
+      <th>funded_amnt</th>
+      <td>0.039560</td>
+    </tr>
+    <tr>
+      <th>total_il_high_credit_limit</th>
+      <td>0.038760</td>
+    </tr>
+    <tr>
+      <th>total_acc</th>
+      <td>0.033076</td>
+    </tr>
+    <tr>
+      <th>mo_sin_rcnt_rev_tl_op</th>
+      <td>0.029896</td>
+    </tr>
+    <tr>
+      <th>num_il_tl</th>
+      <td>0.028831</td>
+    </tr>
+    <tr>
+      <th>num_bc_tl</th>
+      <td>0.027727</td>
+    </tr>
+    <tr>
+      <th>open_acc</th>
+      <td>0.027671</td>
+    </tr>
+    <tr>
+      <th>mo_sin_rcnt_tl</th>
+      <td>0.026762</td>
+    </tr>
+    <tr>
+      <th>acc_open_past_24mths</th>
+      <td>0.025749</td>
+    </tr>
+    <tr>
+      <th>pct_tl_nvr_dlq</th>
+      <td>0.025246</td>
+    </tr>
+    <tr>
+      <th>term_1</th>
+      <td>0.024927</td>
+    </tr>
+    <tr>
+      <th>num_actv_rev_tl</th>
+      <td>0.024415</td>
+    </tr>
+    <tr>
+      <th>num_actv_bc_tl</th>
+      <td>0.020331</td>
+    </tr>
+    <tr>
+      <th>num_tl_op_past_12m</th>
+      <td>0.018097</td>
+    </tr>
+    <tr>
+      <th>mort_acc</th>
+      <td>0.016078</td>
+    </tr>
+    <tr>
+      <th>inq_last_6mths</th>
+      <td>0.012809</td>
+    </tr>
+    <tr>
+      <th>emp_length_1</th>
+      <td>0.006036</td>
+    </tr>
+    <tr>
+      <th>addr_state_4</th>
+      <td>0.004969</td>
+    </tr>
+    <tr>
+      <th>home_ownership_3</th>
+      <td>0.004806</td>
+    </tr>
+    <tr>
+      <th>home_ownership_1</th>
+      <td>0.004426</td>
+    </tr>
+    <tr>
+      <th>addr_state_34</th>
+      <td>0.004153</td>
+    </tr>
+    <tr>
+      <th>addr_state_43</th>
+      <td>0.003995</td>
+    </tr>
+    <tr>
+      <th>emp_length_10</th>
+      <td>0.003949</td>
+    </tr>
+    <tr>
+      <th>addr_state_9</th>
+      <td>0.003816</td>
+    </tr>
+    <tr>
+      <th>emp_length_2</th>
+      <td>0.003783</td>
+    </tr>
+    <tr>
+      <th>emp_length_3</th>
+      <td>0.003717</td>
+    </tr>
+    <tr>
+      <th>emp_length_0</th>
+      <td>0.003504</td>
+    </tr>
+    <tr>
+      <th>emp_length_4</th>
+      <td>0.003291</td>
+    </tr>
+    <tr>
+      <th>emp_length_8</th>
+      <td>0.003104</td>
+    </tr>
+    <tr>
+      <th>emp_length_5</th>
+      <td>0.003079</td>
+    </tr>
+    <tr>
+      <th>emp_length_7</th>
+      <td>0.002853</td>
+    </tr>
+    <tr>
+      <th>addr_state_31</th>
+      <td>0.002775</td>
+    </tr>
+    <tr>
+      <th>emp_length_6</th>
+      <td>0.002762</td>
+    </tr>
+    <tr>
+      <th>addr_state_38</th>
+      <td>0.002682</td>
+    </tr>
+    <tr>
+      <th>addr_state_35</th>
+      <td>0.002665</td>
+    </tr>
+    <tr>
+      <th>addr_state_14</th>
+      <td>0.002603</td>
+    </tr>
+    <tr>
+      <th>home_ownership_2</th>
+      <td>0.002602</td>
+    </tr>
+    <tr>
+      <th>emp_length_9</th>
+      <td>0.002595</td>
+    </tr>
+    <tr>
+      <th>addr_state_10</th>
+      <td>0.002352</td>
+    </tr>
+    <tr>
+      <th>addr_state_27</th>
+      <td>0.002287</td>
+    </tr>
+    <tr>
+      <th>addr_state_3</th>
+      <td>0.002124</td>
+    </tr>
+    <tr>
+      <th>addr_state_20</th>
+      <td>0.002101</td>
+    </tr>
+    <tr>
+      <th>addr_state_45</th>
+      <td>0.002092</td>
+    </tr>
+    <tr>
+      <th>addr_state_22</th>
+      <td>0.002004</td>
+    </tr>
+    <tr>
+      <th>addr_state_23</th>
+      <td>0.001956</td>
+    </tr>
+    <tr>
+      <th>addr_state_19</th>
+      <td>0.001929</td>
+    </tr>
+    <tr>
+      <th>addr_state_42</th>
+      <td>0.001856</td>
+    </tr>
+    <tr>
+      <th>addr_state_33</th>
+      <td>0.001819</td>
+    </tr>
+    <tr>
+      <th>addr_state_15</th>
+      <td>0.001771</td>
+    </tr>
+    <tr>
+      <th>addr_state_24</th>
+      <td>0.001758</td>
+    </tr>
+    <tr>
+      <th>addr_state_5</th>
+      <td>0.001687</td>
+    </tr>
+    <tr>
+      <th>addr_state_1</th>
+      <td>0.001641</td>
+    </tr>
+    <tr>
+      <th>addr_state_18</th>
+      <td>0.001625</td>
+    </tr>
+    <tr>
+      <th>addr_state_47</th>
+      <td>0.001571</td>
+    </tr>
+    <tr>
+      <th>addr_state_36</th>
+      <td>0.001394</td>
+    </tr>
+    <tr>
+      <th>addr_state_6</th>
+      <td>0.001378</td>
+    </tr>
+    <tr>
+      <th>addr_state_17</th>
+      <td>0.001334</td>
+    </tr>
+    <tr>
+      <th>addr_state_2</th>
+      <td>0.001245</td>
+    </tr>
+    <tr>
+      <th>addr_state_48</th>
+      <td>0.001195</td>
+    </tr>
+    <tr>
+      <th>addr_state_37</th>
+      <td>0.001181</td>
+    </tr>
+    <tr>
+      <th>addr_state_40</th>
+      <td>0.001171</td>
+    </tr>
+    <tr>
+      <th>addr_state_25</th>
+      <td>0.001029</td>
+    </tr>
+    <tr>
+      <th>addr_state_44</th>
+      <td>0.000993</td>
+    </tr>
+    <tr>
+      <th>addr_state_32</th>
+      <td>0.000901</td>
+    </tr>
+    <tr>
+      <th>addr_state_16</th>
+      <td>0.000892</td>
+    </tr>
+    <tr>
+      <th>addr_state_39</th>
+      <td>0.000697</td>
+    </tr>
+    <tr>
+      <th>addr_state_11</th>
+      <td>0.000695</td>
+    </tr>
+    <tr>
+      <th>addr_state_49</th>
+      <td>0.000663</td>
+    </tr>
+    <tr>
+      <th>addr_state_30</th>
+      <td>0.000593</td>
+    </tr>
+    <tr>
+      <th>addr_state_8</th>
+      <td>0.000532</td>
+    </tr>
+    <tr>
+      <th>addr_state_26</th>
+      <td>0.000504</td>
+    </tr>
+    <tr>
+      <th>addr_state_41</th>
+      <td>0.000382</td>
+    </tr>
+    <tr>
+      <th>addr_state_50</th>
+      <td>0.000367</td>
+    </tr>
+    <tr>
+      <th>addr_state_29</th>
+      <td>0.000347</td>
+    </tr>
+    <tr>
+      <th>addr_state_7</th>
+      <td>0.000319</td>
+    </tr>
+    <tr>
+      <th>addr_state_46</th>
+      <td>0.000278</td>
+    </tr>
+    <tr>
+      <th>addr_state_28</th>
+      <td>0.000140</td>
+    </tr>
+    <tr>
+      <th>addr_state_21</th>
+      <td>0.000097</td>
+    </tr>
+    <tr>
+      <th>addr_state_13</th>
+      <td>0.000015</td>
+    </tr>
+    <tr>
+      <th>addr_state_12</th>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Some of the most important variables are <code>int_rate</code>, <code>annual_inc</code> or <code>funded_amnt</code> this makes sense with our first hypothesis. On the other hand, the <code>addr_state</code> is not important.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Confussion-Matrix">Confussion Matrix<a class="anchor-link" href="#Confussion-Matrix">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span>    <span class="c1"># Set the size</span>
@@ -14563,7 +14986,7 @@ Wall time: 4min 43s
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
@@ -14618,7 +15041,7 @@ weighted avg       0.80      0.80      0.75     61098
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span>    <span class="c1"># Create the roc score</span>
@@ -14694,7 +15117,7 @@ weighted avg       0.80      0.80      0.75     61098
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span>    <span class="c1">#save the model to disk</span>
