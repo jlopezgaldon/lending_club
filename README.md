@@ -1,7 +1,8 @@
 # Lending CLub
 ## Machine Learning CUNEF 2020
 ### Authors:
-#### Hugo César Octavio del Sueldo y Jose López Galdón
+#### Hugo César Octavio del Sueldo `hugo.delsueldo@cunef.edu`
+#### Jose López Galdón `jose.lopez@cunef.edu`
 
 ***
 
@@ -50,6 +51,8 @@ The best model is the XGboost tuned, beacause it has the best accuracy, precissi
   - 02_intermediate<- Cleaned version of raw
   - 03_processed <- Data used to develop models
   - 04_models <- trained models
+
+- _html- <- html of the notebooks.
 
 - _notebooks_ <- Jupyter notebooks.
 
