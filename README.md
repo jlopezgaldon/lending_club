@@ -1,7 +1,7 @@
 # Lending CLub
 ## Machine Learning CUNEF 2020
 ### Authors:
-####Hugo César Octavio del Sueldo y Jose López Galdón
+#### Hugo César Octavio del Sueldo y Jose López Galdón
 
 ***
 
