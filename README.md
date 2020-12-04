@@ -39,6 +39,27 @@ XGBoost Tuned          | 80.49 %
 
 The best model is the XGboost tuned, beacause it has the best accuracy, precissions, recalls and f1-score. But as we can see the differences between the metrics are very low, so if we have to conclude which is the best one for production would be the Logistic Regression because it is clearly interpretable and faster than the XGboost or Random Forest Classifier.
 
+***
+
+#### Repository structure
+
+- _README.md_ <- The top-level README for developers.
+
+- _data_
+  - 01_raw <- Immutable input data
+  - 02_intermediate<- Cleaned version of raw
+  - 03_processed <- Data used to develop models
+  - 04_models <- trained models
+
+- _notebooks_ <- Jupyter notebooks.
+
+- _references_ <- Data dictionaries, manuals, etc.
+
+- _requirements.txt_ <- The requirements file for reproducing the analysis environment.
+
+- _.gitignore_ <- Avoids uploading data, credentials, outputs, system files etc
+
+
 
 
 
