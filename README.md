@@ -28,7 +28,7 @@ In order to perform the next algorithms, we processed the data (sclaing, one hot
 #### Predictions
 
  Algorithms            |Accuracy|ROC-AUC
------------------------|-----------------
+-----------------------|--------|--------
 Logistic Regression    | 76.11 %| 0.72
 Support Vector Machine | 58.89 %| 0.51
 Random Forest          | 76.25 %| 0.73
