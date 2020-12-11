@@ -19,7 +19,7 @@ Initially we have 4 datasets with the information of our clients, to proceed wit
 
 #### EDA
 
-After performing an Exploratory Data Analysis and selecting the best variables we got a 407319 rows × 30 columns dataset.
+After performing an Exploratory Data Analysis and selecting the best variables we got a 425015 rows × 51 columns dataset.
 
 #### Processing data
 
@@ -27,14 +27,14 @@ In order to perform the next algorithms, we processed the data (sclaing, one hot
 
 #### Predictions
 
- Algorithms            |Accuracy
------------------------|--------
-Logistic Regression    | 80.32 %
-Support Vector Machine | 67.23 %
-Random Forest          | 80.41 %
-XGBoost                | 80.22 %
-K-Nearest Neighbors    | 76.89 %
-XGBoost Tuned          | 80.49 %
+ Algorithms            |Accuracy|ROC-AUC
+-----------------------|-----------------
+Logistic Regression    | 76.11 %| 0.72
+Support Vector Machine | 58.89 %| 0.51
+Random Forest          | 76.25 %| 0.73
+XGBoost                | 76.58 %| 0.73
+K-Nearest Neighbors    | 73.80 %| 0.59
+XGBoost Tuned          | 73.42 %| 0.73
 
 #### Conclusions
 

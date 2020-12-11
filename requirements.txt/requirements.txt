@@ -5,7 +5,7 @@ backcall @ file:///home/conda/feedstock_root/build_artifacts/backcall_1592338393
 backports.functools-lru-cache==1.6.1
 bleach @ file:///home/conda/feedstock_root/build_artifacts/bleach_1600454382015/work
 brotlipy==0.7.0
-certifi==2020.11.8
+certifi==2020.6.20
 cffi @ file:///D:/bld/cffi_1602537433319/work
 chardet @ file:///D:/bld/chardet_1602255508636/work
 cloudpickle @ file:///home/conda/feedstock_root/build_artifacts/cloudpickle_1598400192773/work
@@ -18,6 +18,7 @@ dask @ file:///home/conda/feedstock_root/build_artifacts/dask-core_1602029610262
 decorator==4.4.2
 defusedxml==0.6.0
 entrypoints @ file:///D:/bld/entrypoints_1602701924183/work/dist/entrypoints-0.3-py2.py3-none-any.whl
+graphviz @ file:///tmp/build/80754af9/python-graphviz_1602262908037/work
 htmlmin==0.1.12
 idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1593328102638/work
 imagecodecs @ file:///D:/bld/imagecodecs_1602637501645/work
@@ -80,6 +81,7 @@ pyzmq==19.0.2
 requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1592425495151/work
 scikit-image==0.17.2
 scikit-learn @ file:///C:/ci/scikit-learn_1598377018496/work
+scikit-plot==0.3.7
 scipy @ file:///C:/ci/scipy_1592916963468/work
 seaborn @ file:///tmp/build/80754af9/seaborn_1600553570093/work
 Send2Trash==1.5.0
